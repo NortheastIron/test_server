@@ -1,14 +1,13 @@
-const EventEmitter = require('events');
 
-const emitter = new EventEmitter();
+const Logger = require('./log');
+const log = new Logger();
+// const log = require('./log');
 
-const log = require('./log');
-
-emitter.on('some_event', (args) => {
+log.on('some_event', (args) => {
     const { id, text } = args;
     console.log('on!', text, id);
 });
 
-log('LOGGED');
+log.log('LOGGED');
 
 //urok 5 6:31
